@@ -268,6 +268,15 @@ struct GTY(()) c_parser {
   tree in_omp_decl_attribute;
 };
 
+if (c_parser_next_token_is (parser, CPP_LSQBRACKET)) { // Detects '['
+    // Add logic to parse IntExpression, Expression, and IntExpression
+    // Ensure proper checks and parsing for each part
+    c_parser_consume_token (parser); // Consumes '['
+    // Add your specific parsing logic here
+    c_parser_require (parser, CPP_RSQBRACKET, "expected ']'"); // Ensure it ends with ']'
+    // Handle the parsed values according to the assignment requirements
+}
+
 /* Return a pointer to the Nth token in PARSERs tokens_buf.  */
 
 c_token *
