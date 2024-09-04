@@ -262,6 +262,20 @@ pop_to_parent_deferring_access_checks (void)
    none of the special cases apply, simply return DECL as the source of the
    problem.  */
 
+tree handle_new_construct(tree int_expr1, tree expr, tree int_expr2) {
+    // Evaluate the main Expression
+    tree result = evaluate_expression(expr);
+
+    // Compare int_expr1 and int_expr2
+    while (!expressions_equal(int_expr1, int_expr2)) {
+        // Perform required increment and re-evaluate
+        int_expr1 = increment_expression(int_expr1);
+        result = evaluate_expression(expr);
+    }
+
+    return result; // Return the final evaluated result
+}
+
 static tree
 get_class_access_diagnostic_decl (tree parent_binfo, tree decl)
 {
