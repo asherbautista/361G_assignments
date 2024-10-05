@@ -1,0 +1,8 @@
+#!/bin/bash
+
+# Compile the semantic checker
+make
+
+# Run the semantic checker on test files
+./semantic_checker example1.sql
+./semantic_checker example2.sql
