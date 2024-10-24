@@ -1,1 +1,8 @@
 
+#!/bin/bash
+
+# Compile the Java files
+javac -cp .:path/to/jpf-core/build/* src/*.java
+
+# Run the program with JPF and both listeners
+java -cp .:path/to/jpf-core/build/* -jar path/to/jpf-core/build/RunJPF.jar +listener=.src.CoverageListener,.src.MemoizationListener src/TestProgram.java
