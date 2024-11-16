@@ -1,0 +1,6 @@
+#!/bin/bash
+# Build
+javac -d bin -cp asm-9.5.jar:. cfg/src/**/*.java
+
+# Run
+java -cp asm-9.5.jar:bin Main "$@"
